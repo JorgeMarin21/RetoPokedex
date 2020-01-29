@@ -20,11 +20,5 @@ export class AppComponent {
     }
     );
   }
-  getPokemon() {
-    this.pokeService.getPokemon('ivysaur')
-    .subscribe(pokemons => {
-      console.log(pokemons);
-    });
-  }
 }
 
