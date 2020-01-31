@@ -15,6 +15,7 @@ import { EncabezadoComponent } from './encabezado/encabezado.component';
 import { PokedexComponent } from './pokedex/pokedex.component';
 import { InfoComponent } from './info/info.component';
 import { FavoritesComponent } from './favorites/favorites.component';
+import { OrderModule } from 'ngx-order-pipe';
 
 const routes: Routes = [
   { path: 'info/:id', component: InfoComponent},
