@@ -1,0 +1,32 @@
+<!-- <div class="container-fluit mt-3">
+  <table class="table">
+    <tbody>
+      <tr>
+        <td>
+            <div class="card" style="width: 12rem;" *ngFor="let poke of pokes">
+                <img src="{{poke.ThumbnailImage}}" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">{{poke.name}}</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div> -->
+<div class="container">
+  <div class="row mt-4 mr-4 justify-content-center">
+    <div class="col-lg-3 col-md-6 ml-2 my-2 mx-2 card" *ngFor="let poke of pokes; index as n">
+      <img src= "{{poke.ThumbnailImage}}" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">{{poke.number}}-{{poke.name}}</h5>
+        <h6 class="card-title">Type:</h6>
+        <p class="card-text" *ngFor="let tipo of poke.type; index as numero">{{tipo}}</p>
+        <a [routerLink]="['/info',n]" class="btn btn-primary">{{poke.name}} info</a>
+        
+      </div>
+    </div>
+  </div>
+</div>
