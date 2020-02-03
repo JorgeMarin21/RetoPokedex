@@ -17,7 +17,6 @@ export class PokeService {
   pokes: Observable<Pokemon[]>;
   pokeHour: Observable<PokeHour[]>;
   private pokeDoc: AngularFirestoreDocument<PokeHour>;
-
   constructor(
     private http: HttpClient,
     private afs: AngularFirestore
@@ -41,12 +40,12 @@ export class PokeService {
   removePoke(id: number) {
     this.pokeDoc = this.afs.doc<PokeHour>(`pokemones/${id}`);
     this.pokeDoc.delete();
-    alert('The Pokemon has been removed succesfully.');
   }
 
   getAllPokemons() {
     const path = `${this.api}/api/pokedex/kalos`;
     return this.http.get<Pokemon[]>(path);
   }
+
 
 }

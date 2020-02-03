@@ -35,8 +35,9 @@ export class InfoComponent implements OnInit {
   }
 
   addPoke() {
-    this.servicio.addPokeFav(this.toPokeHour());
-    alert('El pokemon fue agregado a favoritos con éxito');
+    this.pokefav = this.toPokeHour();
+    this.servicio.addPokeFav(this.pokefav);
+    alert(this.poke.name + ' has been added to Favorites succesfully');
   }
   toPokeHour() {
     const x: PokeHour = { pokemon: this.poke, horaActual: this.getActualDate(), pokeIndex: this.pokeNumber };

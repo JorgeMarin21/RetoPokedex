@@ -11,14 +11,16 @@ export class FavoritesComponent implements OnInit {
   constructor(
     private pokeService: PokeService
   ) {
-      this.pokeService.listPokeFav().subscribe(poke => {
-        this.pokes = poke;
-      });
-    }
+    this.pokeService.listPokeFav().subscribe(poke => {
+      this.pokes = poke;
+      this.pokes.sort((a, b) => a.pokeIndex - b.pokeIndex);
+    });
+  }
 
-    remove(id: number) {
-      this.pokeService.removePoke(id);
-    }
+  remove(id: number) {
+    this.pokeService.removePoke(id);
+    alert('The pokemon has been removed succesfully.');
+  }
 
   ngOnInit() {
   }

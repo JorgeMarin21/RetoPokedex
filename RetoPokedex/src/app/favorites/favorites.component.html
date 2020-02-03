@@ -7,9 +7,11 @@
         <h6 class="card-title">Type:</h6>
         <p class="card-text" *ngFor="let tipo of poke.pokemon.type; index as numero">{{tipo}}</p>
         <p class="card-text" >{{poke.horaActual}}</p>
-        <div class="btn-group">
+        <div class="card-btn-bottom btn-group">
           <a [routerLink]="['/info',poke.pokeIndex]" class="btn btn-primary">{{poke.pokemon.name}} info</a>          
-          <a class="btn btn-primary" (click)="remove(poke.id)">Remove</a>
+          <a class="btn btn-primary" (click)="remove(poke.id)">
+            <i class="fas fa-trash"></i>
+          </a>
         </div>
                 
       </div>
