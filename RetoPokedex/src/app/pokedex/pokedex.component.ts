@@ -11,7 +11,7 @@ import { Pokemon } from '../interfaces/pokemon';
   styleUrls: ['./pokedex.component.scss']
 })
 export class PokedexComponent implements OnInit {
-  pokes: any[];
+  pokes: Pokemon[];
   name = '';
   pokemons = new Array<Pokemon>();
 
@@ -22,15 +22,14 @@ export class PokedexComponent implements OnInit {
       this.pokes = pokemons;
       this.pokemons = pokemons;
     }
+
     );
   }
   ngOnInit(): void {
   }
-
-  pokemonFilter(name) {
-    console.log(name);
+  pokemonFilter(name: string) {
     this.pokemons = this.pokes.filter(pok =>
-    pok.name.toLowerCase().indexOf(name.toLowerCase()) !== -1);
+    pok.name.toLowerCase().indexOf(name.toLowerCase()) !== -1 || pok.number.indexOf(name) !== -1);
   }
 
 /*submit () {

@@ -6,6 +6,7 @@ import { PokeHour } from '../interfaces/pokehour';
 import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { Pokeindex } from '../interfaces/pokeindex';
 
 @Injectable({
   providedIn: 'root'
@@ -46,6 +47,7 @@ export class PokeService {
     const path = `${this.api}/api/pokedex/kalos`;
     return this.http.get<Pokemon[]>(path);
   }
+
 
 
 }
